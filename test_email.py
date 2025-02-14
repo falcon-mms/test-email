@@ -31,7 +31,8 @@ async def search_email_server(email, domean):
     server = smtplib.SMTP(mx_record)
     server.set_debuglevel(0)
     server.helo()
-    server.mail("mmahdis@gmail.com")
+    # ENTER your email
+    server.mail("Example email")
     code = server.rcpt(email)
     await server.quit()
     if code ==250 :
