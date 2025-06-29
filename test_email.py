@@ -1,6 +1,7 @@
 import re
 import dns.resolver
 import smtplib
+
 # include directore in python
 # input email by user
 
@@ -27,6 +28,9 @@ def search_email_format(email_input):
     except Exception as e:
         return False , f"erorr when search domain"
 
+
+
+
 def search_email_server(email_input, domean):
     try:
         mx_records = dns.resolver.resolve(domean,"MX")
@@ -43,6 +47,10 @@ def search_email_server(email_input, domean):
             return False ,"is email is False"
     except Exception as e :
         return False ,f"erorr chaking server {e}"
+
+
+
+
 
 is_valid ,message = search_email_format(email_input)
 if is_valid:
